@@ -10,8 +10,17 @@ namespace EfCore30_IdsInValueObjects.Controllers
 {
     public class HomeController : Controller
     {
+        public BlogDbContext DbContext { get; }
+
+        public HomeController(BlogDbContext dbContext)
+        {
+            DbContext = dbContext;
+        }
         public IActionResult Index()
         {
+            var blog456 = DbContext.Blogs.Where(p => p.Id == new BlogId("456")).ToList();
+
+            var postsOfBlog123 = DbContext.Posts.Where(p => p.BlogId == new BlogId("123")).ToList();
             return View();
         }
 

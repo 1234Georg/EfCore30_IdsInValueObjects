@@ -26,4 +26,10 @@
     <PackageReference Include="Microsoft.Extensions.Primitives" Version="3.0.0-preview5.19227.9" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="DomainModel\" />
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>
